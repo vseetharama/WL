@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            padding: 20px;
+            background: linear-gradient(150deg, rgba(0, 255, 255, 0.336), rgba(255, 166, 0, 0.377));
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .content {
+            width: 40%;
+            border-radius: 20px;
+            padding: 40px;
+            background-color: white;
+        }
+
+        .content h2 {
+            text-align: center;
+        }
+
+        .content input {
+            width: 100%;
+            padding: 10px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 10px;
+            border: 1px solid gray;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .grid .key {
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 0;
+            background-color: rgb(45, 146, 45);
+            color: white;
+            cursor: pointer;
+            transition: all;
+        }
+
+        .grid .key:active {
+            transform: scale(0.95);
+        }
+
+        .content p {
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">V Seetharama Mugeraya - 4MW23CS177</h1>
+    <div class="container">
+        <div class="content">
+            <h2>Simple Calculator</h2>
+            <input type="text" name="inp1" id="inp1" value="0">
+            <input type="text" name="inp2" id="inp2" value="0">
+            <div class="grid">
+                <button id="+" class="key">Sum</button>
+                <button id="-" class="key">Difference</button>
+                <button id="*" class="key">Product</button>
+                <button id="/" class="key">Quotient</button>
+                <button id="%" class="key">Remainder</button>
+                <button id="^" class="key">Power</button>
+                <button id="^2" class="key">Square</button>
+                <button id="/^" class="key">Square Root</button>
+            </div>
+            <p>Result: <span id="result">0</span></p>
+        </div>
+    </div>
+    <script>
+        let inps = document.querySelectorAll("input");
+        let nums = [0,1,2,3,4,5,6,7,8,9, "Enter", "Backspace"].map(n => String(n));
+        inps.forEach(inp => {
+            inp.onkeydown = (e) => {
+                if(e.key === ".") {
+                    if(inp.value.includes(".")) e.preventDefault();
+                    else return;
+                }
+                if(!nums.includes(e.key)) {
+                    e.preventDefault();
+                }
+                if(inp.value.startsWith("0")) inp.value = inp.value.substring(1);
+            }
+            inp.onkeyup = (e) => {
+                if(inp.value === "") {
+                    inp.value = "0";
+                }
+            }
+        });
+        let keys = document.querySelectorAll(".key");
+        let resElem = document.getElementById("result");
+        keys.forEach(key => {
+            key.onclick = () => {
+                let result = 0;
+                switch(key.id) {
+                    case '+': result = Number(inps[0].value) + Number(inps[1].value);break;
+                    case '-': result = Number(inps[0].value) - Number(inps[1].value);break;
+                    case '*': result = Number(inps[0].value) * Number(inps[1].value);break;
+                    case '/': result = Number(inps[0].value) / Number(inps[1].value);break;
+                    case '%': result = Number(inps[0].value) % Number(inps[1].value);break;
+                    case '^': result = Number(inps[0].value) ** Number(inps[1].value);break;
+                    case '^2': result = Math.pow(Number(inps[0].value), 2);break;
+                    case '/^': result = Math.sqrt(Number(inps[0].value));break;
+                }
+
+                resElem.innerText = result;
+            }
+        });
+    </script>
+</body>
+</html>
