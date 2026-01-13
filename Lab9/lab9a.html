@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Experiment 9 - jQuery</title>
+
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+p, ul {
+  margin: 10px 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Append Content</h2>
+
+<p id="para">This is an existing paragraph.</p>
+
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<button id="appendBtn">Append Content</button>
+
+<h2>Animate Element</h2>
+
+<div class="box" id="box"></div>
+<button id="animateBtn">Animate Box</button>
+
+<script>
+$(document).ready(function () {
+var count = $("#list li").length;
+  // Append content to paragraph and list
+  $("#appendBtn").click(function () {
+   count++;
+    $("#para").append(" Appended text " + count + ".");
+    $("#list").append("<li>Item " + count + "</li>");
+  });
+
+  // Animate div and change color
+  $("#animateBtn").click(function () {
+    $("#box").animate({
+      width: "150px",
+      height: "150px"
+    }, function () {
+      $(this).css("background-color", "lightblue");
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>
