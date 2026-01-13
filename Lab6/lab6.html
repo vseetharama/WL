@@ -6,27 +6,27 @@
 <title>Simple Calculator</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
+   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   /* flex-direction: column; */
   align-items: center;
   height: 100vh;
   /* margin: 0; */
   background-color: #f0f0f0;
-}
+} 
 
 .calculator {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 20px;
-  width: 300px;
+  /* width: 300px; */
 }
 
 #display {
-  width: 100%;
-  height: 40px;
+  /* width: 100%; */
+  /* height: 40px; */
   font-size: 1.5em;
   text-align: right;
   margin-bottom: 10px;
@@ -90,7 +90,7 @@ button:hover {
 
     <button class="operator" onclick="setOperation('%')">%</button>
     <button class="operator" onclick="setOperation('^')">x<sup>y</sup></button>
-    <button class="operator" onclick="squareRoot()">√</button>
+    <button class="operator" onclick="squareRoot()">&radic;</button>
     <button class="operator" onclick="square()">x<sup>2</sup></button>
     <button onclick="clearDisplay()">C</button>
   </div>

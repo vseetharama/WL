@@ -64,7 +64,10 @@ h3~p {
 font-family: 'Georgia', serif;
 color: #555;
 }
-
+h2+p{
+font-size: 20px;
+color: #ff5722;
+}
 time, img, span {
 display: block;
 margin: 15px 0;
@@ -74,7 +77,6 @@ a:hover {
 color: #9c27b0;
 text-decoration: underline;
 }
-
 p::first-line {
 font-weight: bold;
 color: #d32f2f;
