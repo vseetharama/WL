@@ -15,7 +15,7 @@ padding-bottom: 5px;
 h3{
 color: #2196f3;
 font-family: 'Courier New', Courier, monospace;
-font-size: 24px;
+font-size: 54px;
 margin-bottom: 10px;
 }
 
@@ -40,10 +40,11 @@ font-weight: bold;
 
 a[target="_blank"]:hover {
 text-decoration: underline;
+color: #d32f2f;
 }
 
 div p {
-color: #616161;
+color: #2e6a08;
 font-size: 16px;
 }
 
@@ -65,8 +66,8 @@ font-family: 'Georgia', serif;
 color: #555;
 }
 h2+p{
-font-size: 20px;
-color: #ff5722;
+font-size: 90px;
+color: #4322ff;
 }
 time, img, span {
 display: block;
@@ -74,10 +75,10 @@ margin: 15px 0;
 }
 
 a:hover {
-color: #9c27b0;
+/* color: #9c27b0; */
 text-decoration: underline;
 }
 p::first-line {
 font-weight: bold;
-color: #d32f2f;
+color: #b8d32f;
 }
